@@ -1,0 +1,19 @@
+<!--pages/main/main.wxml-->
+<view class="normal_text">
+重要：该小程序正在测试中。
+</view>
+<view class="section" style="margin-top:100rpx">
+  <picker bindchange="bindPickerBuildChange" value="{{buildIndex}}" range="{{buildArray}}">
+    <view class="main_text">
+      > 餐厅：{{buildArray[buildIndex]}}
+    </view>
+  </picker>
+</view>
+<view style="margin-top:20px">
+<button type="default" bindtap="onClickCameraButton" style="font-size:20px;margin:20rpx;height:250rpx;line-height:250rpx;">
+拍摄
+</button>
+</view>
+<view style="width:100%">
+<image src="/img/sjtu.png" style="margin-top:100rpx;margin:80rpx;width:78.6%;align-items:center;display:flex;justify-content:center;" mode="aspectFit"></image>
+</view>

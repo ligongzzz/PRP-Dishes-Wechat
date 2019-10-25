@@ -1,0 +1,43 @@
+/* pages/result/result.wxss */
+.image_view{
+	margin: 20rpx;
+	width: 95%;
+	height: 350rpx;
+	border-radius: 25rpx;
+}
+
+.normal_text{
+	border-radius: 20rpx;
+	background: rgb(241, 241, 241);
+	padding: 30rpx;
+	font-size: 16px;
+	margin: 20rpx;
+}
+
+.main_text{
+	border-radius: 20rpx;
+	background: rgb(12, 148, 68);
+	padding: 30rpx;
+	font-size: 16px;
+	color: rgb(255,255,255);
+	margin: 20rpx;
+}
+
+.main_button{
+	height: 300rpx;
+	border-radius: 20rpx;
+	background: rgb(12, 148, 68);
+	padding: 20rpx;
+	font-size: 16px;
+	color: rgb(255,255,255);
+	margin: 20rpx;
+	text-align: center;
+}
+
+.picker{
+	border-radius: 20rpx;
+	background: rgb(241, 241, 241);
+	margin: 20rpx;
+	padding: 10rpx;
+	width:auto;
+}

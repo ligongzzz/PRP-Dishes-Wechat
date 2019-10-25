@@ -1,0 +1,20 @@
+<!--pages/result/result.wxml-->
+<view>
+	<image src='{{image_dir}}' class="image_view" mode="aspectFill">
+</image>
+</view>
+<view wx:if="{{showTip}}">
+	<view class="main_text">
+		{{tipContent}}
+	</view>
+</view>
+<view wx:if="{{showAns}}" style="margin-bottom:80rpx">
+	<view wx:for="{{menu_list}}">
+		<view class="normal_text">
+			{{item}}
+		</view>
+	</view>
+	<view class="main_text">
+		这顿饭一共消耗了{{cal_val}}卡路里哦！
+	</view>
+</view>
