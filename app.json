@@ -2,6 +2,7 @@
 	"pages": [
 		"pages/main/main",
 		"pages/result/result",
+		"pages/menu/menu",
 		"pages/index/index",
 		"pages/logs/logs"
 	],
@@ -15,6 +16,9 @@
 	"permission": {
 		"scope.userLocation": {
 			"desc": "你的位置信息将用于定位当前的餐厅。"
+		},
+		"scope.camera":{
+			"desc": "将会调用摄像头进行菜品识别。"
 		}
 	}
 }

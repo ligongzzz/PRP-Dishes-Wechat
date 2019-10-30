@@ -1,8 +1,8 @@
 <!--pages/main/main.wxml-->
-<view class="normal_text">
-重要：该小程序正在测试中。
+<view style="height:100rpx;display:flex;flex-direction:row;background:#eeeeee;margin:20rpx;width:94%;border-radius:20rpx">
+<text style="font-size:16px;margin-left:30rpx;line-height:100rpx">{{loginTip}}</text>
 </view>
-<view class="section" style="margin-top:100rpx">
+<view class="section" style="margin-top:40rpx">
   <picker bindchange="bindPickerBuildChange" value="{{buildIndex}}" range="{{buildArray}}">
     <view class="main_text">
       > 餐厅：{{buildArray[buildIndex]}}
@@ -13,7 +13,10 @@
 <button type="default" bindtap="onClickCameraButton" style="font-size:20px;margin:20rpx;height:250rpx;line-height:250rpx;">
 拍摄
 </button>
+<button type="primary" bindtap="onClickInfoButton" style="font-size:20px;margin:20rpx;height:200rpx;line-height:200rpx;">
+我的卡路里
+</button>
 </view>
 <view style="width:100%">
-<image src="/img/sjtu.png" style="margin-top:100rpx;margin:80rpx;width:78.6%;align-items:center;display:flex;justify-content:center;" mode="aspectFit"></image>
+<image src="/img/sjtu.png" style="margin-left:80rpx;margin-right:80rpx;margin-top:30rpx;width:78.6%;align-items:center;display:flex;justify-content:center;" mode="aspectFit"></image>
 </view>

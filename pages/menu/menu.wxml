@@ -1,0 +1,11 @@
+<!--pages/menu/menu.wxml-->
+<view class="primary_block">
+<view style="color:#000000;font-size:16px;padding:30rpx;padding-bottom:15rpx;">今日卡路里</view>
+<view style="color:#11bb88;font-size:50px;padding-left:30rpx;">{{day_cal_val}}</view>
+</view>
+<view wx:for="{{cal_list}}">
+	<view class="normal_block" style="background:{{item.color}}">
+	<view style="color:#ffffff;margin-left:30rpx;font-size:22px;line-height:160rpx;">{{item.val}}卡</view>
+	<view style="color:#ffffff;margin-left:30rpx;font-size:14px;line-height:160rpx;">{{item.time_str}}</view>
+	</view>
+</view>

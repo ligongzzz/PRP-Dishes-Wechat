@@ -1,4 +1,12 @@
 /* pages/main/main.wxss */
+.image_view{
+	margin: 10rpx;
+	margin-left:20rpx;
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 40rpx;
+}
+
 .normal_text{
 	border-radius: 20rpx;
 	background: rgb(241, 241, 241);

@@ -40,29 +40,32 @@ Page({
 		if(app.globalData.connectedToServer){
 			//Upload to server.
 			console.log(app.globalData.imgSrc.length)
+			let toSend = {
+				type:"img",
+				data:app.globalData.imgSrc
+			}
+			toSend = JSON.stringify(toSend)
 			wx.sendSocketMessage({
-				data: app.globalData.imgSrc,
+				data: toSend,
 			})
 
-			wx.onSocketMessage((res)=>{
-				console.log(res.data)
-				if(res.data.indexOf('success:')!=0){
+			app.onImgResultCallback=(res)=>{
+				let res_src = JSON.parse(res.data)
+				if(res_src.type=='img'&&res_src.result==1){
 					this.setData({
-						tipContent:"图片识别失败"
+						tipContent:"识别成功 😊",
+						menu_list:res_src.data,
+						cal_val:res_src.cal_val,
+						showAns:true
 					})
-					return
 				}
-				let ans_str = res.data.substring(8)
-				let split_ans = ans_str.split('&&&')
-				let menu_list = split_ans[0].split('|||')
-				let cal_val = split_ans[1]
-				this.setData({
-					tipContent:"识别成功 😊",
-					menu_list:menu_list,
-					cal_val:cal_val,
-					showAns:true
-				})
-			})
+				else{
+					this.setData({
+						tipContent:"识别失败 😔",
+						showAns:false
+					})
+				}
+			}
 		}
 		else{
 			this.setData({

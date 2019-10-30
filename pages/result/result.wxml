@@ -15,6 +15,6 @@
 		</view>
 	</view>
 	<view class="main_text">
-		这顿饭一共消耗了{{cal_val}}卡路里哦！
+		这顿饭一共包含了{{cal_val}}卡路里哦！
 	</view>
 </view>

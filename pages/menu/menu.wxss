@@ -1,0 +1,14 @@
+.primary_block{
+	margin: 20rpx;
+	background: rgb(230,230,230);
+	border-radius: 30rpx;
+	height:280rpx;
+}
+
+.normal_block{
+	margin:20rpx;
+	border-radius: 30rpx;
+	height:160rpx;
+	display:flex;
+	flex-direction: row;
+}

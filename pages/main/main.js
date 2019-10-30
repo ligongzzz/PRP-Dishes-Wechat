@@ -1,5 +1,5 @@
 // pages/main/main.js
-var app = getApp()
+const app = getApp()
 Page({
 
 	/**
@@ -8,7 +8,10 @@ Page({
 	data: {
 		buildArray:['第一餐饮大楼','第二餐饮大楼','第三餐饮大楼','第四餐饮大楼','第五餐饮大楼','第六餐饮大楼','第七餐饮大楼','玉兰苑','哈乐餐厅'],
 		buildPos: [[31.0238892825, 121.4271074244], [31.0248359587, 121.4316456090], [31.0288644021, 121.4285147918], [31.0271773225, 121.4226032033], [31.0257369862, 121.4367471708], [31.0310547207, 121.4399490978], [31.0313535123, 121.4366821672], [31.0254752848, 121.4267158217], [31.0226894197, 121.4277511547]],
-		buildIndex: 0
+		buildIndex: 0,
+		userInfo:{},
+		hasUserInfo:false,
+		loginTip:"正在连接到服务器..."
 	},
 
 	/**
@@ -16,13 +19,34 @@ Page({
 	 */
 	onLoad: function (options) {
 		let cur_this = this
+
+		// Send Login Tip Request
+		let login_to_send = JSON.stringify({
+			'type':'cal',
+			'class':'day'
+		})
+		if(app.globalData.loginStatus){
+			wx.sendSocketMessage({
+				data: login_to_send,
+			})
+		}
+		else{
+			app.onLoginStatusCallback=()=>{
+				wx.sendSocketMessage({
+					data: login_to_send,
+				})
+			}
+		}
+		app.onLoginTipCallback=(res)=>{
+			this.setData({
+				loginTip:res
+			})	
+		}
 		//Get Location Data
 		wx.getLocation({
 			success: function (res) {
 				var latitude = res.latitude
 				var longtitude = res.longitude
-				console.log(latitude)
-				console.log(longtitude)
 				let default_i = 0
 				let min_val = 9999.0
 				for (var i = 0; i < 9; ++i) {
@@ -31,7 +55,6 @@ Page({
 						default_i = i
 						min_val = cur_val
 					}
-					console.log(cur_val)
 				}
 				cur_this.setData({
 					buildIndex: default_i
@@ -66,15 +89,12 @@ Page({
 			sourceType:['camera'],
 			success: function(res) {
 				var dir = res.tempFilePaths[0]
-				console.log(dir)
-				console.log('Load the image successfully!')
 
 				wx.getFileSystemManager().readFile({
 					filePath: res.tempFilePaths[0],
 					encoding: 'base64',
 					success: res => {
 						getApp().globalData.imgSrc=res.data
-						// console.log(app.globalData.imgSrc)
 						wx.navigateTo({
 							url: '/pages/result/result?dir=' + dir
 						})
@@ -87,45 +107,26 @@ Page({
 		})
 	},
 
+	// Info Button
+	onClickInfoButton:function(e){
+		wx.navigateTo({
+			url: '/pages/menu/menu'
+		})
+	},
+
+	// Send User Info
+	sendUserInfo:function(e){
+		let cur_this = this
+		if(!this.data.hasUserInfo){
+			return
+		}
+		console.log(this.data.userInfo)
+	},
+
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面隐藏
-	 */
-	onHide: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面卸载
-	 */
-	onUnload: function () {
-
-	},
-
-	/**
-	 * 页面相关事件处理函数--监听用户下拉动作
-	 */
-	onPullDownRefresh: function () {
-
-	},
-
-	/**
-	 * 页面上拉触底事件的处理函数
-	 */
-	onReachBottom: function () {
-
-	},
-
-	/**
-	 * 用户点击右上角分享
-	 */
-	onShareAppMessage: function () {
 
 	}
 })
