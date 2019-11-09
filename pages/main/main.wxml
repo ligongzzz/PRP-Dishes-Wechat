@@ -10,8 +10,11 @@
   </picker>
 </view>
 <view style="margin-top:20px">
-<button type="default" bindtap="onClickCameraButton" style="font-size:20px;margin:20rpx;height:250rpx;line-height:250rpx;">
+<button wx-if="{{oldButton}}" type="default" bindtap="onClickCameraButton" style="font-size:20px;margin:20rpx;height:250rpx;line-height:250rpx;">
 拍摄
+</button>
+<button type="default" bindtap="onClickNewCameraButton" style="font-size:20px;margin:20rpx;height:250rpx;line-height:250rpx;">
+新的拍摄
 </button>
 <button type="primary" bindtap="onClickInfoButton" style="font-size:20px;margin:20rpx;height:200rpx;line-height:200rpx;">
 我的卡路里

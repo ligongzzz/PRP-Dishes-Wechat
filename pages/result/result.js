@@ -39,10 +39,11 @@ Page({
 	onShow: function () {
 		if(app.globalData.connectedToServer){
 			//Upload to server.
-			console.log(app.globalData.imgSrc.length)
 			let toSend = {
 				type:"img",
-				data:app.globalData.imgSrc
+				info:"splitList",
+				data:app.globalData.imgSrc,
+				splitList:app.globalData.splitList,
 			}
 			toSend = JSON.stringify(toSend)
 			wx.sendSocketMessage({
@@ -85,27 +86,5 @@ Page({
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload: function () {
-
 	},
-
-	/**
-	 * 页面相关事件处理函数--监听用户下拉动作
-	 */
-	onPullDownRefresh: function () {
-
-	},
-
-	/**
-	 * 页面上拉触底事件的处理函数
-	 */
-	onReachBottom: function () {
-
-	},
-
-	/**
-	 * 用户点击右上角分享
-	 */
-	onShareAppMessage: function () {
-
-	}
 })

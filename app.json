@@ -3,6 +3,7 @@
 		"pages/main/main",
 		"pages/result/result",
 		"pages/menu/menu",
+		"pages/camera/camera",
 		"pages/index/index",
 		"pages/logs/logs"
 	],

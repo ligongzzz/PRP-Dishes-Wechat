@@ -1,0 +1,8 @@
+<!--pages/camera/camera.wxml-->
+<camera class="camera-view" device-position="back" flash="off" binderror="error" style="width: 100%; height: {{windowInfo.windowHeight}}px;">
+</camera>
+ <canvas class="canvas-view" canvas-id="image-canvas" style='width:100%; height:{{windowInfo.windowHeight}}px;'>
+ <cover-view class="camerabgImage-view">
+<cover-image wx-if="{{showButton}}" class='takephoto' src='../../img/paizhao.png' bindtap='takePhotoAction'></cover-image>
+</cover-view>
+</canvas>

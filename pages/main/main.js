@@ -11,7 +11,8 @@ Page({
 		buildIndex: 0,
 		userInfo:{},
 		hasUserInfo:false,
-		loginTip:"正在连接到服务器..."
+		loginTip:"正在连接到服务器...",
+		oldButton:false,
 	},
 
 	/**
@@ -75,6 +76,13 @@ Page({
 	bindPickerBuildChange:function(e){
 		this.setData({
 			buildIndex: e.detail.value,
+		})
+	},
+
+	// New Camera Button
+	onClickNewCameraButton:function(e){
+		wx.navigateTo({
+			url: '/pages/camera/camera',
 		})
 	},
 	

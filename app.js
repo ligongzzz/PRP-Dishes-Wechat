@@ -113,5 +113,6 @@ App({
 		imgSrc:"",
 		userInfoSent:false,
 		loginStatus:false,
+		splitList:null,
   }
 })
