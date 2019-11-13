@@ -9,3 +9,6 @@
 	<view style="color:#ffffff;margin-left:30rpx;font-size:14px;line-height:160rpx;">{{item.time_str}}</view>
 	</view>
 </view>
+<view style="color:#aaaaaa;font-size:16px;padding-bottom:30rpx;text-align:center;">
+只会显示最近15次的记录
+</view>

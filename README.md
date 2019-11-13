@@ -2,4 +2,14 @@
 A Wechat miniprogram for dishes identification in SJTU.
 
 # Build
-You are supposed to build this wechat miniprogram with the Wechat Development Tool.
+使用“微信开发者工具”构建该微信小程序。
+
+# 更新日志
+## 2019.11.13
+- 功能优化。卡路里显示页只能显示最近15次的信息。
+- 问题修复。解决从其它应用切换回“拍照结果页”后，图片重复上传、识别的问题。
+- 功能优化。修改“新的拍摄”按钮名称为“拍摄”。
+
+## 2019.11.8
+- 新增功能。图像分割页面上线，可以根据方框位置分割菜品位置。
+- 功能优化。简化拍照流程，体验更流畅。
