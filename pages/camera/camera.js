@@ -52,7 +52,7 @@ Page({
 			by = (h-100)*0.025
 			bx = (w-bw)/2
 		}
-		context.setFillStyle("rgba(0,0,0,0.5)")
+		context.setFillStyle("rgba(0,0,0,0.7)")
 		context.fillRect(0,0,w,by)
 		context.fillRect(0,by,bx,h-by)
 		context.fillRect(bx+bw,by,w-bx-bw,h-by)
