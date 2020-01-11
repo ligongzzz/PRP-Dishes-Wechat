@@ -2,14 +2,14 @@
 App({
   onLaunch: function () {
     wx.connectSocket({
-			url: 'wss://ligongzzz.top:80',
+			url: 'wss://ligongzzz.top:6777',
 		})
 		wx.onSocketClose((res)=>{
 			console.log('Connection closed.')
 			this.globalData.connectedToServer=false
 			this.globalData.userInfoSent=false
 			wx.connectSocket({
-				url: 'wss://ligongzzz.top:80',
+				url: 'wss://ligongzzz.top:6777',	
 			})
 		})
 		wx.onSocketError((res)=>{
@@ -17,7 +17,7 @@ App({
 			this.globalData.connectedToServer=false
 			this.globalData.userInfoSent=false
 			wx.connectSocket({
-				url: 'wss://ligongzzz.top:80',
+				url: 'wss://ligongzzz.top:6777',
 			})
 		})
 		wx.onSocketOpen((res)=>{

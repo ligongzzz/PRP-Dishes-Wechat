@@ -69,14 +69,14 @@ Page({
 		context.rect(bx+bw*0.6,by+0.284*bh,bw*0.367,bw*0.367)
 		context.stroke()
 		context.beginPath()
-		context.rect(bx + bw * 0.6, by + 0.568 * bh, bw * 0.367, bw * 0.367)
+		context.rect(bx + bw * 0.6, by + 0.538 * bh, bw * 0.367, bw * 0.367)
 		context.stroke()
 
 		context.beginPath()
 		context.rect(bx + bw * 0.1, by + 0.063 * bh, bw * 0.433, bh * 0.232)
 		context.stroke()
 		context.beginPath()
-		context.rect(bx + bw * 0.1, by + 0.4 * bh, bw * 0.433, bh * 0.4)
+		context.rect(bx + bw * 0.1, by + 0.38 * bh, bw * 0.433, bh * 0.4)
 		context.stroke()
 		
 		context.draw()
@@ -127,7 +127,7 @@ Page({
 						},
 						{
 							x:bw * 0.6,
-							y:0.568 * bh,
+							y:0.538 * bh,
 							w:bw * 0.367,
 							h:bw * 0.367
 						},

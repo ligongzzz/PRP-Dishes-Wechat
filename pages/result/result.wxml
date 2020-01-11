@@ -1,6 +1,6 @@
 <!--pages/result/result.wxml-->
-<view>
-	<image src='{{image_dir}}' class="image_view" mode="aspectFill">
+<view wx:if="{{showImg}}">
+	<image src="{{imgData}}" class="image_view" mode="aspectFill">
 </image>
 </view>
 <view wx:if="{{showTip}}">

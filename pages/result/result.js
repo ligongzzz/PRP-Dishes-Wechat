@@ -12,7 +12,9 @@ Page({
 		tipContent:"识别图片中......",
 		menu_list:[],
 		cal_val:0,
-		showAns:false
+		showAns:false,
+		showImg:false,
+		imgData:""
 	},
 
 	/**
@@ -45,8 +47,11 @@ Page({
 						tipContent: "识别成功 😊",
 						menu_list: res_src.data,
 						cal_val: res_src.cal_val,
-						showAns: true
+						showAns: true,
+						showImg: true,
+						imgData: res_src.img
 					})
+					console.log(this.data.imgData)
 				}
 				else {
 					this.setData({
