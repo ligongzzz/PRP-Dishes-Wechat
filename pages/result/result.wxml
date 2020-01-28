@@ -1,7 +1,6 @@
 <!--pages/result/result.wxml-->
-<view wx:if="{{showImg}}">
-	<image src="{{imgData}}" class="image_view" mode="aspectFill">
-</image>
+<view>
+	<image src="{{imgSrc}}" class="image_view" mode="aspectFill"></image>
 </view>
 <view wx:if="{{showTip}}">
 	<view class="main_text">

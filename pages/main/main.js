@@ -82,12 +82,12 @@ Page({
 	// New Camera Button
 	onClickNewCameraButton:function(e){
 		if(!app.globalData.loginStatus){
-
+			
 		}
 		else{
-		wx.navigateTo({
-			url: '/pages/new_camera/new_camera',
-		})
+			wx.navigateTo({
+				url: '/pages/new_camera/new_camera',
+			})
 		}
 	},
 	

@@ -5,7 +5,8 @@ App({
 			url: 'wss://ligongzzz.top:6777',
 		})
 		wx.onSocketClose((res)=>{
-			console.log('Connection closed.')
+			console.log('Connection closed.')	
+
 			this.globalData.connectedToServer=false
 			this.globalData.userInfoSent=false
 			wx.connectSocket({

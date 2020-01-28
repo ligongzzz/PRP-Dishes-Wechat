@@ -7,15 +7,6 @@
 	display: flex;
 	justify-content: space-around;
 }
-.camerabotton-view{
-  height: 150px;
-  width: 100%;
-  position:absolute;
- 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 .takephoto{
   width: 60px;
   height: 60px;

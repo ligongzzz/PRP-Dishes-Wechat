@@ -6,3 +6,4 @@
 <cover-image wx-if="{{showButton}}" class='takephoto' src='../../img/paizhao.png' bindtap='takePhotoAction'></cover-image>
 </cover-view>
 </canvas>
+ <canvas canvas-id="hidden-canvas" style="width:750rpx;height:{{windowInfo.windowHeight}}px;position:absolute;left:750rpx;"></canvas>

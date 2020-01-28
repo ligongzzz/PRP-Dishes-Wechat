@@ -21,7 +21,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.0",
+	"libVersion": "2.9.0",
 	"appid": "wxdcc58d0791af473d",
 	"projectname": "PRP",
 	"debugOptions": {

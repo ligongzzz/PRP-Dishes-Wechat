@@ -2,19 +2,10 @@
 .camerabgImage-view{
   height: 100%;
   width: 100%;
-  position:absolute;
-	align-items: center;
 	display: flex;
+	flex-direction:row;
+	position: absolute;
 	justify-content: space-around;
-}
-.camerabotton-view{
-  height: 150px;
-  width: 100%;
-  position:absolute;
- 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 .takephoto{
   width: 60px;

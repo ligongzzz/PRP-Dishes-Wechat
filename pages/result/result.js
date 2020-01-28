@@ -8,13 +8,18 @@ Page({
 	 */
 	data: {
 		image_dir: "",
+		imgSrc: "/img/loading_img.png",
 		showTip:true,
-		tipContent:"识别图片中......",
+		tipContent:"上传图片中",
 		menu_list:[],
 		cal_val:0,
-		showAns:false,
-		showImg:false,
+		showImg:0,
 		imgData:""
+	},
+
+	//Draw the canvas image.
+	drawCanvas: function () {
+
 	},
 
 	/**
@@ -23,7 +28,7 @@ Page({
 	onLoad: function (options) {
 		var dir = options.dir
 		this.setData({
-			image_dir:dir
+			image_dir:dir,
 		})
 		console.log(this.data.image_dir)
 
@@ -31,13 +36,17 @@ Page({
 			//Upload to server.
 			let toSend = {
 				type: "img",
-				info: "splitList",
+				info: "universal",
 				data: app.globalData.imgSrc,
-				splitList: app.globalData.splitList,
 			}
 			toSend = JSON.stringify(toSend)
 			wx.sendSocketMessage({
 				data: toSend,
+				success: ()=>{
+					this.setData({
+						tipContent:"正在识别..."
+					})
+				}
 			})
 
 			app.onImgResultCallback = (res) => {
@@ -49,14 +58,15 @@ Page({
 						cal_val: res_src.cal_val,
 						showAns: true,
 						showImg: true,
-						imgData: res_src.img
+						imgSrc: this.data.image_dir
 					})
 					console.log(this.data.imgData)
 				}
 				else {
 					this.setData({
 						tipContent: "识别失败 😔",
-						showAns: false
+						imgSrc: "/img/error_img.png",
+						showAns: false,
 					})
 				}
 			}
