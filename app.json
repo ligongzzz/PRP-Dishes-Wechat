@@ -4,6 +4,7 @@
 		"pages/result/result",
 		"pages/menu/menu",
 		"pages/camera/camera",
+		"pages/new_camera/new_camera",
 		"pages/index/index",
 		"pages/logs/logs"
 	],
