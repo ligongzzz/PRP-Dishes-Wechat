@@ -82,7 +82,10 @@ Page({
 	// New Camera Button
 	onClickNewCameraButton:function(e){
 		if(!app.globalData.loginStatus){
-			
+			wx.showModal({
+				title: '未连接到服务器',
+				content: '请检查您的网络连接，或重新打开小程序后再试。',
+			})
 		}
 		else{
 			wx.navigateTo({
@@ -95,6 +98,34 @@ Page({
 	onClickCameraButton:function(e){
 		wx.navigateTo({
 			url: '/pages/camera/camera',
+		})
+	},
+
+	// Gallery Button
+	onClickGalleryButton: function (e) {
+		let cur_this = this;
+
+		wx.chooseImage({
+			count: 1,
+			sizeType: ['compressed'],
+			sourceType: ['album'],
+			success: function (res) {
+				var dir = res.tempFilePaths[0]
+
+				wx.getFileSystemManager().readFile({
+					filePath: res.tempFilePaths[0],
+					encoding: 'base64',
+					success: res => {
+						getApp().globalData.imgSrc = res.data
+						wx.navigateTo({
+							url: '/pages/result/result?dir=' + dir
+						})
+					}
+				})
+			},
+			fail: function (res) {
+				console.log('Fail to load the image.')
+			}
 		})
 	},
 
