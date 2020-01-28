@@ -81,37 +81,20 @@ Page({
 
 	// New Camera Button
 	onClickNewCameraButton:function(e){
+		if(!app.globalData.loginStatus){
+
+		}
+		else{
 		wx.navigateTo({
-			url: '/pages/camera/camera',
+			url: '/pages/new_camera/new_camera',
 		})
+		}
 	},
 	
 	// Camera Button
 	onClickCameraButton:function(e){
-		let cur_this = this;
-		console.log('Trying to start the camera...')
-
-		wx.chooseImage({
-			count:1,
-			sizeType:['original'],
-			sourceType:['camera'],
-			success: function(res) {
-				var dir = res.tempFilePaths[0]
-
-				wx.getFileSystemManager().readFile({
-					filePath: res.tempFilePaths[0],
-					encoding: 'base64',
-					success: res => {
-						getApp().globalData.imgSrc=res.data
-						wx.navigateTo({
-							url: '/pages/result/result?dir=' + dir
-						})
-					}
-				})
-			},
-			fail:function(res){
-				console.log('Fail to load the image.')
-			}
+		wx.navigateTo({
+			url: '/pages/camera/camera',
 		})
 	},
 

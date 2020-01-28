@@ -1,1 +1,33 @@
-/* pages/new_camera/new_camera.wxss */
+/* pages/camera/camera.wxss */
+.camerabgImage-view{
+  height: 100%;
+  width: 100%;
+  position:absolute;
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+}
+.camerabotton-view{
+  height: 150px;
+  width: 100%;
+  position:absolute;
+ 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.takephoto{
+  width: 60px;
+  height: 60px;
+	bottom: 40px;
+	display: flex;
+	position: absolute;
+}
+.camera-view{
+	z-index: 0;
+	position: absolute;
+}
+.canvas-view{
+	z-index: 102;
+	position: absolute;
+}
