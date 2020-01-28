@@ -80,16 +80,16 @@ Page({
 			by = (h - 100) * 0.025
 			bx = (w - bw) / 2
 		}
-		context.setFillStyle("rgba(0,0,0,0.7)")
-		context.fillRect(0, 0, w, by)
-		context.fillRect(0, by, bx, h - by)
-		context.fillRect(bx + bw, by, w - bx - bw, h - by)
-		context.fillRect(bx, by + bh, bw, h - by - bh)
+		context.setFillStyle("rgba(255,255,255)")
+		// context.fillRect(0, 0, w, by)
+		// context.fillRect(0, by, bx, h - by)
+		// context.fillRect(bx + bw, by, w - bx - bw, h - by)
+		// context.fillRect(bx, by + bh, bw, h - by - bh)
 		
 		// Draw a round rectangle.
-		drawRoundedRect(context,bx,by,bw,bh,16)
+		//drawRoundedRect(context,bx,by,bw,bh,16)
 
-		context.draw()
+		//context.draw()
 
 		this.setData({
 			w: w,
@@ -110,11 +110,10 @@ Page({
 		let w = this.data.w, h = this.data.h
 		let bx = this.data.bx, by = this.data.by
 		let bw = this.data.bw, bh = this.data.bh
-		let pixelRatio = wx.getSystemInfoSync().pixelRatio
 		context.setFillStyle("#000000")
 		context.fillRect(0, 0, w, h)
 		context.rotate(-Math.PI/2)
-		context.drawImage(this.data.src,bx/pixelRatio,by/pixelRatio,bw/pixelRatio,bh/pixelRatio,-w*w/h, 0, w*w/h, w)
+		context.drawImage(this.data.src, -w*w/h, 0, w*w/h, w)
 		context.draw()
 		wx.showLoading({
 			title: '保存图片中',
@@ -126,8 +125,8 @@ Page({
 				y: 0,
 				width: w,
 				height: w*w/h,
-				destWidth: w*pixelRatio,
-				destHeight: w*w/h*pixelRatio,
+				destWidth: w,
+				destHeight: w*w/h,
 				success: (res) => {
 					let ansPath = res.tempFilePath
 					// Calculate the rects
