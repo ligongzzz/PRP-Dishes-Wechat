@@ -12,7 +12,7 @@
 <view style="margin-top:20px">
 <view style="display:flex;flex-direction:row;">
 <button type="default" bindtap="onClickNewCameraButton" style="font-size:20px;margin:20rpx;height:250rpx;line-height:250rpx;width:70%;">
-新的拍摄
+拍摄
 </button>
 <button type="primary" bindtap="onClickGalleryButton" style="font-size:20px;margin:20rpx;margin-left:5rpx;height:250rpx;line-height:250rpx;width:30%;background: rgb(12, 148, 68);">相册</button>
 </view>
@@ -20,7 +20,7 @@
 拍摄
 </button>
 <button type="primary" bindtap="onClickInfoButton" style="font-size:20px;margin:20rpx;height:200rpx;line-height:200rpx;">
-我的卡路里
+我的营养记录
 </button>
 </view>
 <view style="width:100%">

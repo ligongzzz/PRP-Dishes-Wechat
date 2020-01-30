@@ -78,6 +78,15 @@ Page({
 		}
 	},
 
+
+	// Delete the data.
+	delItem: function (e) {
+		wx.showModal({
+			title: '确认删除',
+			content: '您确认要删除第' + e.currentTarget.dataset.index + '个项目吗？',
+		})
+	},
+
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */

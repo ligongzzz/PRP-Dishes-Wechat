@@ -39,7 +39,6 @@ Page({
 				return
 			}
 			let new_data = []
-			console.log(res.data)
 			for(let i=0,len=res.data.length;i<len;i++){
 				let hour_str = res.data[i].hour.toString()
 				let min_str = res.data[i].min.toString()
@@ -66,7 +65,6 @@ Page({
 					let b = 32 - 20 * (cur_val - std_val) / (max_val - std_val)
 					color += r.toString() + ',' + g.toString() + ',' + b.toString() + ')'
 				}
-				console.log(color)
 				new_data.push({'val':res.data[i].val,'time_str':time_str,'color':color})
 			}
 			new_data.reverse()
@@ -79,6 +77,7 @@ Page({
 			data: toSend,
 		})
 	},
+
 
 	/**
 	 * 生命周期函数--监听页面显示
