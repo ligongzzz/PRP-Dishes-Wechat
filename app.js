@@ -68,7 +68,7 @@ App({
 				}
 			}
 			else if(recv_json.type=='day_cal'){
-				let to_show = "😊 今天摄入了"+recv_json.val.toString()+"卡路里哦"
+				let to_show = "😊 今天摄入了"+recv_json.val.toString()+"千卡路里哦"
 				if(this.onLoginTipCallback){
 					this.onLoginTipCallback(to_show)
 				}

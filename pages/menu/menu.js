@@ -25,8 +25,12 @@ Page({
 				}
 			})
 		}
+		wx.showLoading({
+			title: '加载中',
+		})
 		let toSend = JSON.stringify({"type":"cal","class":"normal"})
 		app.onCalValCallback=(res)=>{
+			wx.hideLoading()
 			if(res.result==0){
 				wx.showModal({
 					title: '请求异常',

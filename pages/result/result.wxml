@@ -10,10 +10,10 @@
 <view wx:if="{{showAns}}" style="margin-bottom:80rpx">
 	<view wx:for="{{menu_list}}">
 		<view bindtap="delItem" data-index="{{index}}" class="normal_text">
-			{{item.name}}({{item.cal}}千卡 {{item.fat}}克脂肪)
+			{{item.name}}  ({{item.cal}}千卡 {{item.fat}}克脂肪)
 		</view>
 	</view>
 	<view class="main_text">
-		这顿饭一共包含了{{cal_val}}千卡路里哦！
+		这顿饭包含了{{cal_val}}千卡路里和{{fat_val}}克脂肪哦！
 	</view>
 </view>
